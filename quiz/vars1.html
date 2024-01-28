@@ -5,9 +5,14 @@
             let x = 1;
             var y = 2;
             {
+                let y = 2;
                 y = y + 1;
                 console.log(x+y);
-                let y = 2;
+                
+
+                // variables with let cannot be recdeclared
+                //if we want to redeclare we have to do it at the top before using the varible
+                //thats the error we are getting, inside the block we have not declared y yet
             }
             console.log(x);
             console.log(y);

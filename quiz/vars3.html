@@ -2,11 +2,17 @@
     <head>
         <script>
             // Fix all errors in the code below
+
+            /*there are two errors,
+            1. we cannot reassign a const variable
+            2. area is not defined outside the block
+            */
             const PI = 3.14159;
             {
                 let radius = 5;
-                let area = PI * radius * radius;
-                PI = 3.0;
+                var area = PI * radius * radius;
+                // PI = 3.0; 
+                //since we cannot reassign a const variable, im commenting this line
             }
             console.log(area);
 

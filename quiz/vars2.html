@@ -2,12 +2,20 @@
     <head>
         <script>
             // change the script such that i=0,1,2,3,4 is logged in the console
-            for (var i = 0; i < 5; i++) {
+            for (let i = 0; i < 5; i++) {
                 // setTimeout executes the function after 5 ms
                 setTimeout(function() {
                     console.log(i);
-                }, 0);
+                }, 5);
             }
+
+            //we need to use let instead of var because var is function scoped
+            //and let is block scoped. so when loop ends var value is 5 and it will be printed 5 times
+            /*
+            if we use let, after loop ends there will be 5 setTimeout callbacks and since let is a block scoped
+            each time different values will be creatd
+            but if we use var, var value will be 5 after loop ends. thus it prints 5 , 5 times
+            */
         </script>
     </head>
     <body>
