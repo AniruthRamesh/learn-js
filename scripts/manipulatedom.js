@@ -22,10 +22,15 @@ function createTxtNode(txt) {
   return txtNode;
 }
 
+function createBtnNode(){
+  
+}
+
 function addTable() {
   const tableNode = document.createElement("table");
   for(let i = 0; i < 3; i++) {
     let col1 = createTDNode(createTxtNode("Cell (" + i + ", 0)"));
+
     tableNode.appendChild(createTRNode([col1]));
   }
   document.getElementById("root").appendChild(tableNode);

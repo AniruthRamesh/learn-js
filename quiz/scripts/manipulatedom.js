@@ -10,6 +10,21 @@ function createTRNode(colNodes) {
   return trNode;
 }
 
+function createBtnNode(col){
+  let btn = document.createElement("button");
+  let text = document.createTextNode("Edit Text");
+  btn.appendChild(text);
+  let input = document.createElement("input");
+  input.setAttribute("placeholder", "Enter Value (x,y)")
+  
+  btn.addEventListener("click", () => {
+    let oldChild = col.childNodes[0];
+    col.replaceChild(input, oldChild)
+  })
+
+  return btn;
+}
+
 function createTDNode(childNode) {
   let tdNode = document.createElement("td");
   tdNode.appendChild(childNode);
@@ -25,7 +40,8 @@ function addTable() {
   const tableNode = document.createElement("table");
   for(let i = 0; i < 3; i++) {
     let col1 = createTDNode(createTxtNode("Cell (" + i + ", 0)"));
-    tableNode.appendChild(createTRNode([col1]));
+    let col2 = createBtnNode(col1);
+    tableNode.appendChild(createTRNode([col1,col2]));
   }
   document.getElementById("root").appendChild(tableNode);
 }

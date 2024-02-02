@@ -6,11 +6,12 @@ const originalMatrix = [
   ];
   
   const newMatrix = originalMatrix.map((row) => {
-    return row.sort();
+    //creating a shallow copy so that row doesnt point to originalMatrix[i][j]
+    return [...row].sort();
   });
   
   // Modifying the original matrix (changing the last element of the first row)
-  originalMatrix[0][2] = 99;
+  originalMatrix[0][2] = 999;
   
   // Displaying the original and new matrices
   console.log('Original Matrix (modified):', originalMatrix);
